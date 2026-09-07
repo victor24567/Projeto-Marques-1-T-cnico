@@ -26,13 +26,38 @@
 </head>
 <body>
     <header>
+
     <h1>B R A S I L</h1>
     <p>Um país de dimensões continentais, riqueza cultural e biodiversidade única.</p>
     </header>
+
     <main>
     <h2>O Achamento do Brasil: A Chegada dos Portugueses em 1500</h2>
     <img src="descobrimento-brasil.png" alt="A Chegada dos Portugueses em 1500">
     <p>Em abril de 1500, as naus comandadas por Pedro Álvares Cabral avistaram as terras que viriam a ser chamadas de Brasil, dando início ao contato entre a Europa e as populações indígenas que já habitavam a região há milênios. Esse encontro marcou o começo da colonização portuguesa, transformando profundamente a história, a demografia e a cultura do nosso país.</p>
+    <button>👍 <span>0</span></button>
+    <button>👎 <span>0</span></button>
     </main>
 </body>
+
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach( function(botao){
+    let curtiu = false;
+    botao.addEventListener("click", botaoClicado);
+    function botaoClicado() {
+        console.log("Botão clicado com sucesso!");
+        let text = botao.querySelector("span");
+
+        if (curtiu === false){
+            text.textContent++;
+            curtiu = true;
+        } else {
+            text.textContent--;
+            curtiu = false;
+        }
+    }
+})
+</script>
 </html>
